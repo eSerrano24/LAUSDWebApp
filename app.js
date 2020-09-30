@@ -3,7 +3,20 @@ const xlsx = require("xlsx");
 
 const app = express();
 
-let workBook = xlsx.readFile("LAUSDschoolCodes.xlms");
+let workBook = xlsx.readFile("LAUSDschoolCodes.xlsx");
+
+let ws = workBook.Sheets["Sheet1"];
+
+let data = xlsx.utils.sheet_to_json(ws);
+
+/*let newData = data.map(function (record) {
+  let schoolName = record.School;
+  return schoolName;
+});*/
+
+console.log(data);
+
+//console.log(workBook.SheetNames);
 
 //console log when app is running on server 3000
 app.listen(3000, function () {
@@ -13,3 +26,5 @@ app.listen(3000, function () {
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
 });
+//include style.css
+app.use(express.static(__dirname + "/public"));
