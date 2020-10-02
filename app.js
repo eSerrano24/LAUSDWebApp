@@ -9,12 +9,13 @@ let ws = workBook.Sheets["Sheet1"];
 
 let data = xlsx.utils.sheet_to_json(ws);
 
-/*let newData = data.map(function (record) {
-  let schoolName = record.School;
-  return schoolName;
-});*/
-
-console.log(data);
+//console.log(data.length);
+//loop through array and check if school name is in array of objects
+// for (let i = 0; i < data.length; i++) {
+//   if (data[i].School) {
+//     console.log(data[i]);
+//   }
+// }
 
 //console.log(workBook.SheetNames);
 
@@ -28,3 +29,12 @@ app.get("/", function (req, res) {
 });
 //include style.css
 app.use(express.static(__dirname + "/public"));
+
+//filter through school list
+let filterSchools = data.filter((schoolName) =>
+  schoolName.School.includes("San Pedro")
+);
+
+console.log(filterSchools);
+
+//console.log(filterSchools(data, "San"));
