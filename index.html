@@ -25,7 +25,7 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="public/css/style.css" />
   </head>
   <body>
     <div class="jumbotron">
@@ -33,8 +33,13 @@
       <p class="lead">Search for School by name or location code.</p>
     </div>
     <form id="mainForm">
-      <input type="text" class="form-control" placeholder="Enter School Name" />
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <input
+        type="text"
+        id="userInput"
+        class="form-control"
+        placeholder="Enter School Name"
+      />
+      <a class="btn btn-primary btn-md" href="#" role="button">Search</a>
     </form>
 
     <script src="app.js"></script>
